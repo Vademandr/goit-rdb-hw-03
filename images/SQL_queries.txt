@@ -1,0 +1,21 @@
+select *
+  from products;
+  
+select name, phone
+  from shippers;
+  
+select min(price) as minimum_price, max(price) as maximum_price, avg(price) as average_price
+  from products;
+  
+select distinct category_id, price
+  from products
+ order by price desc
+ limit 10;
+ 
+select count(*) as quantity_of_products
+  from products
+ where price between 20 and 100;
+
+select supplier_id as supplier, count(*) as quantity_of_products, avg(price)
+  from products
+ group by supplier_id;
